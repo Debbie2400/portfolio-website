@@ -1,0 +1,40 @@
+<html>
+
+<body>
+    <div id="title">
+        <h1>Welcome to my webpage</h1>
+        <p>This is where dreams come true</p>
+        <button onclick="makeDreamComeTrue()">Make dream come true</button>
+    </div>
+</body>
+
+</html>
+<style>
+    body {
+        background-image: ;
+        background-size: cover;
+    }
+
+    h1 {
+        color: brown;
+    }
+
+    button:hover {
+        background-color: darksalmon;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    #title {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+<script>
+    function makeDreamComeTrue() {
+        alert("Dream has come true")
+        document.body.style.background = 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaAwp-m_I06xCRpOISnMPH6I78m2s_ehadWSFAtLrV0A&s=10)';
+        document.getElementById("title").style.visibility = "hidden"
+    }
+</script>
