@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="./titlesection/titlesection.css">
+    <link rel="stylesheet" href="./aboutme/aboutme.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Armata">
 </head>
 
@@ -11,7 +12,13 @@
         <p class="title-section-subtext">Bringing your ideas to life in a creative way</p>
         <button class="title-section-button" onclick="makeDreamComeTrue()">Let's Go</button>
     </div>
-    <div class="main-section"></div>
+    <div class="misc-section" id="aboutme">
+        <div class="text-block-container">
+            <h1>About Me</h1>
+            <p class="aboutme-description">
+                I am a Full-Stack Developer</p>
+        </div>
+    </div>
 </body>
 
 </html>
@@ -34,6 +41,17 @@
         background-size: cover;
         padding: 25px;
     }
+
+    .misc-section{
+        width: 100vw;
+        padding: 100px 25px;
+    }
+
+    .text-block-container{
+        width: 65%;
+        margin: 0 auto;
+    }
+
 </style>
 
 <script>
