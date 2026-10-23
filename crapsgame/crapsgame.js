@@ -5,10 +5,16 @@ const crapsMainSection = "craps-main-section"
 
 function registerCrapsPlayer() {
     let crapsUsername = document.getElementById(crapsUsernameInput).value
-    alert("Got: " + crapsUsername)
-    removeRegistrationPane()
-    showMainGameSection()
-}
+
+    // Username validation check
+    let firstCharIsDigitRegex = /^[0-9]|[^a-zA-Z0-9_]/g
+    if (crapsUsername.length < 5 || firstCharIsDigitRegex.test(crapsUsername)) {
+        alert("Username must be at least 5 characters, alphanumerics and underscore only, no spaces ad cannot start with a number.")
+    }
+    else{
+       removeRegistrationPane()
+       showMainGameSection()
+    }
 
 function removeRegistrationPane() {
     document.getElementById(crapsRegistrationPane).style.display = "none"
@@ -16,4 +22,5 @@ function removeRegistrationPane() {
 
 function showMainGameSection() {
     document.getElementById(crapsMainSection).style.display = "block"
+}
 }
