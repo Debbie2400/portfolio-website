@@ -26,7 +26,7 @@
                 <a href="https://www.facebook.com/share/1Gfu64iUFB/" target="_blank">
                     <i class="aboutme-icon fa-brands fa-square-facebook"></i>
                 </a>
-            </div>   
+            </div>
         </div>
     </div>
     <div class="main-section" id="craps-game">
@@ -41,10 +41,20 @@
                 </div>
                 <div class="craps-registration-continue" onclick="registerCrapsPlayer()">
                     Continue
-                </div>    
+                </div>
             </div>
             <div id="craps-main-section">
-                MAIN SECTION HERE
+                <div class="craps-main-section-stats">
+                    <div>
+                        Welcome, <span id="craps-stats-username">User</span>
+                    </div>
+                    <div id="craps-stat-money-container">
+                        $<span id="craps-stats-money"></span>
+                    </div>
+                    <div>
+                        Rounds: <span id="craps-stats-rounds"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -53,13 +63,13 @@
 </html>
 
 <style>
-
-    *{
+    * {
         box-sizing: border-box;
         font-family: Armata;
     }
 
-    html, body{
+    html,
+    body {
         margin: 0px;
         padding: 0px;
     }
@@ -71,12 +81,12 @@
         padding: 25px;
     }
 
-    .misc-section{
+    .misc-section {
         width: 100vw;
         padding: 120px 25px;
     }
 
-    .text-block-container{
+    .text-block-container {
         width: 65%;
         margin: 0 auto;
     }
@@ -86,7 +96,6 @@
             width: 100%;
         }
     }
-
 </style>
 
 <script src="./crapsgame/crapsgame.js"></script>
