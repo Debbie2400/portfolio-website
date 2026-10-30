@@ -4,6 +4,10 @@ let crapsUsername = ""
 // Craps Game Settings
 const startingMoney = 1000
 const startingRounds = 0
+const bets = {
+    even: "EVEN",
+    odd: "ODD"
+}
 
 // HTML ELEMENTS IDs
 const crapsUsernameInput = "craps-username-input"
@@ -16,6 +20,7 @@ const crapsStatsRounds = "craps-stats-rounds"
 // In-game variables
 let currentMoney = startingMoney
 let currentRounds = startingRounds
+let currentBet = bets.even
 
 function registerCrapsPlayer() {
     crapsUsername = document.getElementById(crapsUsernameInput).value
@@ -23,13 +28,14 @@ function registerCrapsPlayer() {
     // Username validation check
     let firstCharIsDigitRegex = /^[0-9]|[^a-zA-Z0-9_]/g
     if (crapsUsername.length < 5 || firstCharIsDigitRegex.test(crapsUsername)) {
-        alert("Username must be at least 5 characters, alphanumerics and underscore only, no spaces ad cannot start with a number.")
+        alert("Username must be at least 5 characters, alphanumerics and underscore only, no spaces and cannot start with a number.")
     }
     else{
        removeRegistrationPane()
        showMainGameSection()
        setupFirstRound()
     }
+}    
 
 function removeRegistrationPane() {
     document.getElementById(crapsRegistrationPane).style.display = "none"
@@ -45,6 +51,7 @@ function setupFirstRound() {
     currentRounds = startingRounds
     setMoney(startingMoney)
     setRounds(startingRounds)
+    betEven()
 }
 
 function setMoney (money) {
@@ -53,5 +60,19 @@ function setMoney (money) {
 
 function setRounds (round) {
     document.getElementById(crapsStatsRounds).innerHTML = round
-}    
 }
+
+function betEven () {
+    chooseBet(bets.even)
+}
+
+function betOdd () {
+    chooseBet(bets.odd)
+}
+
+function chooseBet (bet) {
+  currentBet = bet
+  document.getElementById(bet).style.backgroundColor = "peachpuff"
+  const otherBet = bet == bets.even ? bets.odd : bets.even
+  document.getElementById(otherBet).style.backgroundColor = "transparent"
+}    
